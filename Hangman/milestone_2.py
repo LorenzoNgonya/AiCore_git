@@ -1,10 +1,12 @@
-# this will allow the code to chose a word randomly
+# this will allow the code to choose a word randomly
+
+word_list = ["papayas","bananas","grapes","strawberries", "avocado"]
+print (word_list)
 
 import random
 
-from milestone_1 import word_list
+## choose a random word 
 
-def word ():
-    word = random.choice(word_list)
-    
-    print(word)
+word = random.choice(word_list)
+print(word)
+
