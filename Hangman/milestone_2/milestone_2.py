@@ -5,7 +5,7 @@ print (word_list)
 
 from opcode import hasjabs
 import random
-from string import ascii_lowercase
+from string import ascii_lowercase 
 
 ## choose a random word 
 
@@ -16,16 +16,13 @@ print(word)
 
 guess = input("guess a letter")
 
-print(guess)
 
 letter = guess
 
 while letter == True:
-    if len(guess) ==1:
-     if guess in ascii_lowercase:
+    if len(guess) ==1 and guess.isalpha():
         break
-if len(guess) >1:
-    if guess not in ascii_lowercase:
+    else:
         print("Invalid letter. Please, enter a single alphabetical character.")
 
    
