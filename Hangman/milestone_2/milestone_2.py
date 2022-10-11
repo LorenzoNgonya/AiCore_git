@@ -28,3 +28,4 @@ if guess in word:  # if statement that checks if the guess is in the word.
     print ("Good guess! {} is in the word.".format(guess))
 else:
        print ("Sorry, {} is not in the word. Try again.".format(guess)) # This code will run if the guess is not in the word.
+
