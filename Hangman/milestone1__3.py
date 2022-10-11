@@ -15,7 +15,6 @@ print(word)
 
 guess = input("guess a letter")
 
-print(guess)
 
 ### if statement that checks it's a single letter 
 
