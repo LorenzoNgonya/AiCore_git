@@ -1,5 +1,4 @@
-# code that will continuously ask the user for a letter and validate it.
-
+# In this milestone I will use the Object Oriented Programming to develop the whole Hangman game.
 word_list = ["papayas","bananas","grapes","strawberries", "avocado"]
 print (word_list)
 
@@ -29,3 +28,14 @@ if guess in word:  # if statement that checks if the guess is in the word.
 else:
        print ("Sorry, {} is not in the word. Try again.".format(guess)) # This code will run if the guess is not in the word.
 
+# code for the hangman classs to develop rest of the game 
+
+class Hangman:
+    
+    def __init__(self, word_list, num_lives):
+        self.word = random.choice(word_list)
+        self.word_guessed = 
+        self.num_letters = word.__sizeof__
+        self.num_lives = 5
+        self.word_list = ["papayas","bananas","grapes","strawberries", "avocado"]
+        self.list_of_guesses = []
