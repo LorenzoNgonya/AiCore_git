@@ -1,5 +1,4 @@
-# In this milestone I will use the Object Oriented Programming to develop the whole Hangman game.
-# %% 
+# In this milestone I will use the Object Oriented Programming to develop the whole Hangman game
 word_list = ["papayas","bananas","grapes","strawberries", "avocado"]
 print (word_list)
 
@@ -7,7 +6,6 @@ from opcode import hasjabs
 import random
 from re import S, X
 from string import ascii_lowercase
-
 from Hangman.milestone_2.milestone_2WS import ask_for_input
 
 word = random.choice(word_list)
@@ -30,7 +28,6 @@ else:
        print ("Sorry, {} is not in the word. Try again.".format(guess)) # This code will run if the guess is not in the word.
 
 # code for the hangman classs to develop rest of the game 
-# %%
 
 class Hangman:
     
@@ -57,5 +54,5 @@ class Hangman:
                     check_guess_method(guess)
                     {self.list_of_guesses}.append(guess)
 
-# %%
+ask_for_input
 
