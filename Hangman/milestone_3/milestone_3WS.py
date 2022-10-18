@@ -6,7 +6,7 @@ from opcode import hasjabs
 import random
 from re import S, X
 from string import ascii_lowercase
-from Hangman.milestone_2.milestone_2WS import ask_for_input
+
 
 word = random.choice(word_list)
 print(word)
@@ -43,7 +43,7 @@ class Hangman:
             if len(guess) ==1 and guess in ascii_lowercase:
                 print ("Good guess! {} is in the word.".format(guess))
 
-        def ask_for_input_method(self):
+        def ask_for_input(self):
             while True:
                 guess = input ("guess a letter")
                 if guess not in ascii_lowercase:
@@ -53,6 +53,4 @@ class Hangman:
                 else :
                     check_guess_method(guess)
                     {self.list_of_guesses}.append(guess)
-
-ask_for_input
 

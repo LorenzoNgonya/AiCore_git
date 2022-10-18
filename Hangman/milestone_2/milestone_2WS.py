@@ -24,7 +24,7 @@ def check_guess(guess):
     else:
         print ("Sorry, {} is not in the word. Try again.".format(guess)) # This code will run if the guess is not in the word.
 
-def ask_for_input():
+def ask_for_input(self):
 
 # code that will continuously ask the user for a letter and validate it.
     
