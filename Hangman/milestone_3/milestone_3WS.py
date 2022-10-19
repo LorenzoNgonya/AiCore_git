@@ -8,6 +8,7 @@ from re import S, X
 from string import ascii_lowercase
 
 
+
 word = random.choice(word_list)
 print(word)
 
@@ -30,8 +31,10 @@ else:
 # code for the hangman classs to develop rest of the game 
 
 class Hangman:
-    
+#      __init__ method to initialise the attributes of the class.Word_list and num_lives as parameters.
     def __init__(self, word_list, num_lives=5):
+
+# Initialise the following attributes:
         self.word = random.choice(word_list)
         self.word_guessed = [f"_",len(word)]
         self.num_letters = word.__sizeof__
@@ -39,10 +42,15 @@ class Hangman:
         self.word_list = ["papayas","bananas","grapes","strawberries", "avocado"]
         self.list_of_guesses = [len(guess)]
 
+# check_guess method that will ask the user to guess a letter and another method that will check if the guess is in the word.
     def check_guess_method(self):
         if len(guess) ==1 and guess in ascii_lowercase:
             print ("Good guess! {} is in the word.".format(guess))
-
+        for guess in self.word:
+                if guess in self.word:
+                    print ('_'.join(self.word_guessed))
+        else:
+            self.num_lives = self.num_lives - 1
     def ask_for_input (self):
         while True:
             guess = input ("guess a letter")
