@@ -6,6 +6,7 @@ from opcode import hasjabs
 import random
 from re import S, X
 from string import ascii_lowercase
+from typing_extensions import Self
 
 
 
@@ -31,7 +32,7 @@ else:
 # code for the hangman classs to develop rest of the game 
 
 class Hangman:
-#      __init__ method to initialise the attributes of the class.Word_list and num_lives as parameters.
+#      __init__ method to initialise the attributes of the class. Word_list and num_lives as parameters.
     def __init__(self, word_list, num_lives=5):
 
 # Initialise the following attributes:
@@ -51,6 +52,11 @@ class Hangman:
                     print ('_'.join(self.word_guessed))
         else:
             self.num_lives = self.num_lives - 1
+            print ("Sorry, {} is not in the word.".format(guess))
+            print ("You have {} lives left.".format(self.num_lives))
+    
+        self.list_of_guesses.append(guess)    
+    
     def ask_for_input (self):
         while True:
             guess = input ("guess a letter")

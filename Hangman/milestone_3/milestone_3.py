@@ -40,4 +40,3 @@ class Hangman:
                     check_guess_method(guess)
                     {self.list_of_guesses} .append(guess)
 
-# %%
