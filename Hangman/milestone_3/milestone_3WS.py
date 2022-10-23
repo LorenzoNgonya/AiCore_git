@@ -2,11 +2,13 @@
 word_list = ["papayas","bananas","grapes","strawberries", "avocado"]
 print (word_list)
 
+from lib2to3.pytree import LeafPattern
 from opcode import hasjabs
 import random
 from re import S, X
 from string import ascii_lowercase
-from typing_extensions import Self
+
+
 
 
 
@@ -41,15 +43,15 @@ class Hangman:
         self.num_letters = word.__sizeof__
         self.num_lives = num_lives
         self.word_list = ["papayas","bananas","grapes","strawberries", "avocado"]
-        self.list_of_guesses = [len(guess)]
+        self.list_of_guesses = []
 
 # check_guess method that will ask the user to guess a letter and another method that will check if the guess is in the word.
     def check_guess_method(self):
         if len(guess) ==1 and guess in ascii_lowercase:
             print ("Good guess! {} is in the word.".format(guess))
-        for guess in self.word:
-                if guess in self.word:
-                    print ('_'.join(self.word_guessed))
+        for i in range (len(self.word)):
+            if guess == self.word[i]:
+                print (i.join(self.word_guessed))
         else:
             self.num_lives = self.num_lives - 1
             print ("Sorry, {} is not in the word.".format(guess))
@@ -68,4 +70,7 @@ class Hangman:
                 self.check_guess_method(guess)
                 {self.list_of_guesses}.append(guess)
 
-Hangman.ask_for_input()
+
+Hangman.ask_for_input(word_list)
+
+
