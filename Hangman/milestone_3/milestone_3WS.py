@@ -2,6 +2,7 @@
 word_list = ["papayas","bananas","grapes","strawberries", "avocado"]
 print (word_list)
 
+from ctypes import sizeof
 from opcode import hasjabs
 import random
 from re import S, X
@@ -39,8 +40,8 @@ class Hangman:
 # Initialises the following attributes:
         self.word = random.choice(word_list)
         self.word_guessed = ['_'] * len(self.word)
-        self.num_letters = self.word.__sizeof__
-        self.num_lives = num_lives
+        self.num_letters = len(self.word)
+        self.num_lives = self.num_lives =5
         self.word_list = ["papayas","bananas","grapes","strawberries", "avocado"]
         self.list_of_guesses = []
 
@@ -53,7 +54,10 @@ class Hangman:
             for indx, letter in enumerate(self.word):
                 if letter == guess:
                     self.word_guessed[indx] = letter
-                    print(self.word_guessed)
+            print(self.word_guessed)
+            
+            self.num_letters = self.num_letters - 1
+            
         else:
             self.num_lives = self.num_lives - 1
             print (f"Sorry, {guess} is not in the word.")
