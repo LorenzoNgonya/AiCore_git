@@ -14,11 +14,6 @@ from string import ascii_lowercase
 
 
 
-
-
-word = random.choice(word_list)
-print(word)
-
 # code that will continuously ask the user for a letter and validate it.
 
 # while True:
@@ -43,25 +38,26 @@ class Hangman:
 
 # Initialises the following attributes:
         self.word = random.choice(word_list)
-        self.word_guessed = ['_ '*len(self.word)]
-        self.num_letters = word.__sizeof__
+        self.word_guessed = ['_'] * len(self.word)
+        self.num_letters = self.word.__sizeof__
         self.num_lives = num_lives
         self.word_list = ["papayas","bananas","grapes","strawberries", "avocado"]
         self.list_of_guesses = []
 
 # check_guess method that will ask the user to guess a letter and another method that will check if the guess is in the word.
     def check_guess_method(self, guess):
-        if len(guess) ==1 and guess in ascii_lowercase:
-            print ("Good guess! {} is in the word.".format(guess))
-            for i in range (len(self.word)):
-                if guess == self.word[i]:
-                    self.word_guessed = self.word_guessed + [i]
+        guess = guess.lower()
+        if guess in self.word:
+    
+            print (f"Good guess! {guess} is in the word.")
+            for indx, letter in enumerate(self.word):
+                if letter == guess:
+                    self.word_guessed[indx] = letter
                     print(self.word_guessed)
-                #self.word_guessed = ''.join(self.word_guessed)
         else:
             self.num_lives = self.num_lives - 1
-            print ("Sorry, {} is not in the word.".format(guess))
-            print ("You have {} lives left.".format(self.num_lives))
+            print (f"Sorry, {guess} is not in the word.")
+            print (f"You have {self.num_lives} lives left.")
     
         self.list_of_guesses.append(guess)    
     
@@ -81,6 +77,7 @@ class Hangman:
 
 game = Hangman(word_list)
 game.ask_for_input()
+
 
 
 
