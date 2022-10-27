@@ -1,35 +1,12 @@
+
 # In this milestone I will use the Object Oriented Programming to develop the whole Hangman game
 word_list = ["papayas","bananas","grapes","strawberries", "avocado"]
 print (word_list)
 
 
+
 import random
 from string import ascii_lowercase
-
-
-
-
-
-
-
-
-# code that will continuously ask the user for a letter and validate it.
-
-# while True:
-#     guess = input ("guess a letter ")
-#     if len(guess) ==1 and guess in ascii_lowercase: # checks that code is a single alphabetical character 
-#         break
-#     else :
-#         print ("Invalid letter. Please, enter a single alphabetical character.")
-        
-# Checks if the letter guessed by the user is in the secret word that was randomly chosen by the computer. 
-
-# if guess in word:  # if statement that checks if the guess is in the word.
-#     print ("Good guess! {} is in the word.".format(guess))
-# else:
-#        print ("Sorry, {} is not in the word. Try again.".format(guess)) # This code will run if the guess is not in the word.
-
-# code for the hangman classs to develop rest of the game 
 
 class Hangman:
 #      __init__ method to initialise the attributes of the class. Word_list and num_lives as parameters.
@@ -39,10 +16,10 @@ class Hangman:
         self.word = random.choice(word_list)
         self.word_guessed = ['_'] * len(self.word)
         self.num_letters = len(self.word)
-        self.num_lives = self.num_lives =5
+        self.num_lives = self.num_lives=5
         self.word_list = ["papayas","bananas","grapes","strawberries", "avocado"]
         self.list_of_guesses = []
-
+       
 # check_guess method that will ask the user to guess a letter and another method that will check if the guess is in the word.
     def check_guess_method(self, guess):
         guess = guess.lower()
@@ -75,11 +52,17 @@ class Hangman:
                 self.list_of_guesses.append(guess)
 
 
-#Hangman.ask_for_input(word_list)
+#Create a function that will run all the code to run the game as expected
+def play_game(word_list):
+    game = Hangman (word_list,num_lives=5)
+    while True:
+        if game.num_lives == 0:
+            print ("You lost!")
+        print ("there")    
+        if game.num_letters >= 1:
+                game.ask_for_input()
+        if game.num_lives > 0 and game.num_letters == 0:
+            print ("Congratulations You Won")
 
-game = Hangman(word_list, num_lives=5)
-game.ask_for_input()
-
-
-
+play_game(word_list)
 
