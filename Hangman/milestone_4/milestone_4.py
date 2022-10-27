@@ -5,6 +5,7 @@ print (word_list)
 
 
 
+from os import remove
 import random
 from string import ascii_lowercase
 
@@ -15,11 +16,11 @@ class Hangman:
 # Initialises the following attributes:
         self.word = random.choice(word_list)
         self.word_guessed = ['_'] * len(self.word)
-        self.num_letters = len(self.word)
+        self.num_letters = set(self.word)
         self.num_lives = self.num_lives=5
         self.word_list = ["papayas","bananas","grapes","strawberries", "avocado"]
         self.list_of_guesses = []
-       
+    
 # check_guess method that will ask the user to guess a letter and another method that will check if the guess is in the word.
     def check_guess_method(self, guess):
         guess = guess.lower()
@@ -31,14 +32,15 @@ class Hangman:
                     self.word_guessed[indx] = letter
             print(self.word_guessed)
             
-            self.num_letters = self.num_letters - 1
+            if guess in self.num_letters:
+                self.num_letters.remove(guess)
             
         else:
             self.num_lives = self.num_lives - 1
             print (f"Sorry, {guess} is not in the word.")
             print (f"You have {self.num_lives} lives left.")
     
-        self.list_of_guesses.append(guess)    
+        self.list_of_guesses.append(guess)
     
     def ask_for_input (self):
         while True:
@@ -50,19 +52,23 @@ class Hangman:
             else :
                 self.check_guess_method(guess)
                 self.list_of_guesses.append(guess)
-
+                break    
+       
 
 #Create a function that will run all the code to run the game as expected
 def play_game(word_list):
     game = Hangman (word_list,num_lives=5)
     while True:
+        
         if game.num_lives == 0:
             print ("You lost!")
-        print ("there")    
-        if game.num_letters >= 1:
-                game.ask_for_input()
-        if game.num_lives > 0 and game.num_letters == 0:
-            print ("Congratulations You Won")
+        if len(game.num_letters) >= 1:
+            game.ask_for_input()
+        else:
+            if len(game.num_letters) == 0 and game.num_lives >= 1:
+                print ("Congratulations You Won")
+                break
+           
 
 play_game(word_list)
 
