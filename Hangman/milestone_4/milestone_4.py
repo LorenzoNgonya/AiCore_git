@@ -1,7 +1,7 @@
 
 # In this milestone I will use the Object Oriented Programming to develop the whole Hangman game
 word_list = ["papayas","bananas","grapes","strawberries", "avocado"]
-print (word_list)
+#print (word_list)
 
 
 
