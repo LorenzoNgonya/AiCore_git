@@ -19,7 +19,7 @@ first project learning code, with the use of the following technologies: VS Code
 
 ## Milestone 1.2
 ---
-- In this milestone I used the *input* function to get the user to input a single letter in the from a string which I assigned the variable *guess*. To validate the input I used *if* statements to make a conditional that the input should be a single alphabetical letter. If the condition is met, I used the *print* function to  print "Good Guess!". if the conditional is not met I used the *else* block to print "Oops! That is not a valid input."
+- In this milestone I used the *input* function to get the user to input a single letter in the from a string which I assigned the variable *guess*. To validate the input I used ab *if* statement to make a conditional that the input should be a single alphabetical letter. If the condition is met, I used the *print* function to  print "Good Guess!". if the conditional is not met I used the *else* block to print "Oops! That is not a valid input."
 
 ![](milestone3.png)
 
@@ -111,7 +111,7 @@ first project learning code, with the use of the following technologies: VS Code
 ## Milestone 3.4 What happens if the letter is NOT in word
 ---
 - In this task I had to define what happens if the guess is not in the word you are trying to guess:
-    -Step 1. In the check_guess method, I created an *else* statement. Within the else block:
+    -In the check_guess method, I created an *else* statement. Within the else block:
         - I reduced the `num_lives' by 1.
         - Then I wrote code to print "Sorry, {letter} is not in the word."
         - and again wrote code to print another message saying "You have {num_lives} lives left." By using the *{}* in this code allows me to format string and print the value of num_lives.
@@ -121,11 +121,32 @@ first project learning code, with the use of the following technologies: VS Code
 
 ![](task_4.png)
 
+## Milestne 4.0 Coding the logic of the game
+---
+- In this task I had to ceate code that will put the game together and allow it to run. To achieve this I had to create a function that will run all the code. I createa a new script called milestone_4.py, I copied and pasted all the codes in milestone_3.py file into the newly created milestone_4.py file.
 
+- Below that *def* (define) a function called play_game with the word_list as the3 parameter. Inside the function. I wrote code for the following steps:
+    - I created an *instance* of the Hangman class by calling the Hangman class and assigning it to a variable called *game*. I purposely did not copy this code to not repeat myself.
+    -In the instance of the class I passed *word_list and num_lives* as arguments to the game object. 
+    - Below I created  a while loop and set the condition to True, in  the body I wrote code for the following:
+        1. To check if the 'num_lives'is equal to 0, I used the  *==* equals to operator which if it was true I wrote code to print a message saying 'You lost!' meaning the game has ended and the user lost.
+        2. Secondly, I had to check if the 'num_letters' is greater than 0 andto accomplish this I used the *>+* equal to or greater than operator and set the value to 1. If theere was 1 or more letters still in num_letters then I to called the 'ask_for_input' method for this instance so the user can continue playing the game. 
+        3. Lastly, I had to check if the'num_lives' is not 0 and the 'num_letters' is not greater than 0. To achive this I employed  the *>=* equal/greater than operator to chek if the num_lives was equal to or more than 1 and the *==* equal too operator to check if the num_letters was equal to 0. If these conditions were true then the user will have won the game. However, n this step I encontoured an issue in my code as the value assigned to the num_letters was an int but some of the words had double letters which resulted in the code continously asking the user to guess a letter even when they had completed the full word or the code wouldn't print.To rectify this I uodated the code in attributes of the Hangman class to change the value of num_lives to a set. This allowed me to check if the guessed letter was present in 'num_letters'. if the letter was present I employed the *.remove()* method and passed guess as a variable through it to remove the character that matched it in the set even if it was more than one letter. This then allowed me use the *len()* function with num_lives through it to use *==* operator in the if statemant so it could run smoothly and have an end. I then wrote code to print a message saying 'Congratulations. You won the game!'.
+- Outside the function, to play the game I had to call the play_game function  and pass in 'word_list" as argument to the function to be able to play the game.
+
+
+
+
+
+
+
+![](task_5.png)
 ## Conclusion 
 ---
 - From my understanding of the project so far is that most of the tools needed to write code are there it is matter of learning and trying different approaches to problems. As the project progresses I'm understanding how the small pieces of code (statements and while loops) are used to create other bigger codes (functions).
 - From building the Hangman class I can see why the object oriented programming is vital to coding as it makes handling large code easier by providing the user simpler, consistent structures. 
+- I have also learnt that code maybe function as designed and there maybe values or indents in the wrong place that affect how the code runs, being able to systematically where the error occurs with help of python errors will be an excellent tool to master. 
+- From this project I have learnt the basics methods, operators, and functions of python and how they interact together to build a bigger picture. As I immerse myself in more of the basics and hoing over the prerequisite knowledge the more I learn and start to see the peices fit in it together.
 
 
 
