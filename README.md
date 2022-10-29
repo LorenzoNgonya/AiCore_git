@@ -148,7 +148,7 @@ first project learning code, with the use of the following technologies: VS Code
 - From my understanding of the project so far is that most of the tools needed to write code are there it is matter of learning and trying different approaches to problems. As the project progresses I'm understanding how the small pieces of code (statements and while loops) are used to create other bigger codes (functions).
 - From building the Hangman class I can see why the object oriented programming is vital to coding as it makes handling large code easier by providing the user simpler, consistent structures. 
 - I have also learnt that code maybe function as designed and there maybe values or indents in the wrong place that affect how the code runs, being able to systematically where the error occurs with help of python errors will be an excellent tool to master. 
-- From this project I have learnt the basics methods, operators, and functions of python and how they interact together to build a bigger picture. As I immerse myself in more of the basics and hoing over the prerequisite knowledge the more I learn and start to see the peices fit in it together.
+- From this project I have learnt the basics methods, operators, and functions of python and how they interact together to build a bigger picture. As I immerse myself in more of the basics and going over the prerequisite knowledge the more I learn and start to see the peices fit in it together.
 
 
 
